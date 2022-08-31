@@ -188,7 +188,7 @@ class Product {
     hasErrors() {
         let errors = {};     
         if (!this.name || this.name.length <= 2) {
-            errors['name'] = 'name required';
+            errors['name'] = 'Name required';
         }   
         if (!this.category || this.name.length <= 1) {
             errors['category'] = 'Category required';
