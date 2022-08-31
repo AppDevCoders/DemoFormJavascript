@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Dynamic Form</title>
+    <!-- Bootstrap 4 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">    
+    <!-- font-awesome (icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .error {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="container">
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h2>Inventory Form</h2>
+                </div>
+                <div class="card-body">
+                    <form id="form" class="row g-3">
+                                            
+                        <div class="form-group col-sm-12 col-md-6">
+                            <label for="productName" class="form-label">Product Name</label>
+                            <input id="productName" type="text" class="form-control" placeholder="Product" required />   
+                            <small id="productNameError" class="error"></small>             
+                        </div>
+
+                        <div class="form-group col-sm-12 col-md-6">
+                            <label for="productCategory" class="form-label">Category</label>
+                            <select id="productCategory" class="form-control" required>
+                                <option value="" selected>Select Category</option>
+                                <!-- 
+                                <option value="1">Category 1</option>
+                                <option value="2">Category 1</option> 
+                                -->
+                            </select>       
+                            <small id="productCategoryError" class="error"></small>        
+                        </div>
+
+                        <div class="form-group col-sm-12 col-md-6">
+                            <label for="productCost" class="form-label">Cost</label>
+                            <input id="productCost" type="number" class="form-control" placeholder="Cost" required/>      
+                            <small id="productCostError" class="error"></small>             
+                        </div>
+
+                        <div class="form-group col-sm-12 col-md-6">
+                            <label for="productQuantity" class="form-label">Quantity</label>
+                            <input id="productQuantity" type="number" class="form-control" placeholder="Quantity" required/>     
+                            <small id="productQuantityError" class="error"></small>            
+                        </div>
+
+                        <div class="form-group col-12">
+                            <div class="form-check">
+                                <input id="productActive" class="form-check-input" type="checkbox" />
+                                <label for="productActive" class="form-check-label" >
+                                    Active
+                                </label>
+                            </div>                                    
+                        </div>
+
+                    </form>                    
+                </div>
+                <div class="card-footer">                    
+                    <div class="d-flex justify-content-end">          
+                        <button id="btnClear" type="button" class="btn btn-default">
+                            <i class="fa-solid fa-broom"></i>
+                            &nbsp;
+                            Clear
+                        </button>   
+                        &nbsp;       
+                        <button id="btnAdd" type="button" class="btn btn-primary">
+                            <i class="fa-solid fa-plus"></i>
+                            &nbsp;
+                            Add
+                        </button>
+                    </div>            
+                </div>
+            </div>
+
+            <div id="list" class="row my-4">
+                <div class="col">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover table-sm">
+                            <thead>
+                              <tr>
+                                <th class="d-none" scope="col">ID</th>
+                                <th scope="col">Product</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Cost</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">...</th>
+                              </tr>
+                            </thead>
+                            <tbody id="listBody" class="align-middle">
+                                <!-- 
+                                <tr id='row0'>
+                                    <td class="d-none">ID</td>
+                                    <td>First</td>
+                                    <td>Last</td>
+                                    <td>Handle</td>
+                                    <td>Handle</td>
+                                    <td>...</td>
+                                </tr> -->                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="d-flex justify-content-end">                    
+                        <button id="btnStore" type="button" class="btn btn-success">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            &nbsp;
+                            Store Inventory
+                        </button>
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap 4 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <!-- demo -->
+    <script src="./form.js" type="text/javascript"></script>
+</body>
+</html>
